@@ -47,7 +47,7 @@ Use the copy function below to do the following:
 
 function copy (arr) {
     return [...arr]
-}    
+}
 
 
 
@@ -82,8 +82,8 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor (arr, str) {
-   arr.unshift(str)
-   return arr
+    arr.unshift(str)
+    return arr
 }
 
 
@@ -99,8 +99,8 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor (arr) {
-   arr.pop()
-   return arr
+    arr.pop()
+    return arr
 }
 
 
@@ -167,7 +167,7 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(arr,str){
+function filterByWord (arr, str) {
     const output = []
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].includes(str)) {
@@ -190,8 +190,12 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength (arr) {
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+        total += arr[i].split` `.length
+    }
+    return total / arr.length
 }
 
 
@@ -212,7 +216,7 @@ function getRandomFlavors (originalFlavors, newFlavors, seasonalFlavors, regiona
     const allFlavors = originalFlavors.concat(newFlavors, seasonalFlavors, regionalFlavors)
     const thirtyOne = []
     while (thirtyOne.length < 31) {
-        let randNum = Math.floor(Math.random() * allFlavors.length)
+        const randNum = Math.floor(Math.random() * allFlavors.length)
         if (!thirtyOne.includes(allFlavors[randNum])) {
             thirtyOne.push(allFlavors[randNum])
         }
